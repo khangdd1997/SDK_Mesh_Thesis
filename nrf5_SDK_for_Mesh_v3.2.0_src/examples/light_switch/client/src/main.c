@@ -198,8 +198,10 @@ static void app_generic_onoff_client_status_cb(const generic_onoff_client_t * p_
         __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "OnOff server: 0x%04x, Present OnOff: %d\n",
               p_meta->src.value, p_in->present_on_off);
     }*/
+    //        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Received: %d\n", p_in->present_on_off);
     handlerBuffer[p_self->model_handle].modelID = p_self->model_handle;
     handlerBuffer[p_self->model_handle].value = (uint8_t) p_in->target_on_off;
+    //nrf_delay_ms(300);
 }
 
 static void node_reset(void)
@@ -397,14 +399,29 @@ int main(void)
         handlerBuffer[i].value = -1;
     }
 
-    if (m_device_provisioned) {
+    /*if (m_device_provisioned) {
         APP_ERROR_CHECK(app_timer_create(&CollectorSchedule, APP_TIMER_MODE_REPEATED, CollectorSchedule_Handling));
-        APP_ERROR_CHECK(app_timer_start(CollectorSchedule, APP_TIMER_TICKS(500), NULL));    
-    }
-
+        APP_ERROR_CHECK(app_timer_start(CollectorSchedule, APP_TIMER_TICKS(500), NULL));
+    }*/
+    //APP_ERROR_CHECK(app_timer_create(&CollectorSchedule, APP_TIMER_MODE_REPEATED, CollectorSchedule_Handling));
+      //  APP_ERROR_CHECK(app_timer_start(CollectorSchedule, APP_TIMER_TICKS(3000), NULL));
+    
     for (;;)
     {
-        (void)sd_app_evt_wait();
+        for (uint32_t i = 0; i < COLLECTOR_BUFFER_SIZE; i++) {
+            if (handlerBuffer[i].modelID != -1) {
+                char str[7];
+                if (handlerBuffer[i].modelID == 2) {
+                    sprintf(str, "@S%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
+                }
+                else {
+                    sprintf(str, "@L%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
+                }
+                uart_send(str,75);
+                handlerBuffer[i].modelID = -1;                  
+            }
+        }
+        //(void)sd_app_evt_wait();
     }
 }
 
@@ -413,22 +430,24 @@ int main(void)
 ********************************************************************/
 void CollectorSchedule_Handling() 
 {
-    app_timer_stop(CollectorSchedule);
+    /*app_timer_stop(CollectorSchedule);
     nrf_gpio_pin_write(BSP_LED_2, 0);
+    uart_send("AT+CIPSEND=5\r\n", 3000);
+    uart_send("@01,1", 75);
     for (uint32_t i = 0; i < COLLECTOR_BUFFER_SIZE; i++) {
         if (handlerBuffer[i].modelID != -1) {
-            uart_send("AT+CIPSEND=4\r\n", 60);
-            char str[4];
+            uart_send("AT+CIPSEND=4\r\n", 75);
+            char str[5];
             if (handlerBuffer[i].modelID < 10) {
-                sprintf(str, "0%d,%d", handlerBuffer[i].modelID, handlerBuffer[i].value);
+                sprintf(str, "@0%d,%d", handlerBuffer[i].modelID, handlerBuffer[i].value);
             }
             else {
-                sprintf(str, "%d,%d", handlerBuffer[i], handlerBuffer[i].value);
+                sprintf(str, "@%d,%d", handlerBuffer[i], handlerBuffer[i].value);
             }
-            uart_send(str,60);
+            uart_send(str,75);
             handlerBuffer[i].modelID = -1;
         }
     }
     nrf_gpio_pin_write(BSP_LED_2, 1); 
-    APP_ERROR_CHECK(app_timer_start(CollectorSchedule, APP_TIMER_TICKS(500), NULL));    
+    APP_ERROR_CHECK(app_timer_start(CollectorSchedule, APP_TIMER_TICKS(3000), NULL));  */  
 }

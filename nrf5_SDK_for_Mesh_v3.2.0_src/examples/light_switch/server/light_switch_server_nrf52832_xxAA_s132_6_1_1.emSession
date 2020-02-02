@@ -15,9 +15,8 @@
   <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1"/>
   <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Access"/>
   <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Application"/>
-  <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Generic OnOff Model"/>
-  <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Health Model"/>
-  <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Mesh stack"/>
+  <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Application;I2C"/>
+  <ProjectSessionItem path="light_switch_server_nrf52832_xxAA_s132_6.1.1;light_switch_server_nrf52832_xxAA_s132_6.1.1;Application;LM75"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -42,16 +41,12 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="37" y="309" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="301" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="40" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/src/generic_onoff_server.c" selected="0" top="29" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="171" useTextEdit="1" useBinaryEdit="0" left="0" path="../../common/src/app_onoff.c" selected="0" top="150" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="105" useTextEdit="1" useBinaryEdit="0" left="0" path="../../common/include/app_onoff.h" selected="0" top="95" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1268" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../mesh/access/src/access.c" selected="0" top="1259" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/include/generic_onoff_server.h" selected="0" top="136" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="61" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../mesh/access/src/access_publish_retransmission.c" selected="0" top="52" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="68" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/include/generic_onoff_common.h" selected="0" top="51" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="45" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/common/src/model_common.c" selected="0" top="78" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="72" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_onoff/include/generic_onoff_messages.h" selected="0" top="49" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="84" y="350" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="332" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="8" useTextEdit="1" useBinaryEdit="0" left="0" path="lm75/lm75_app.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="10" useTextEdit="1" useBinaryEdit="0" left="0" path="lm75/lm75_app.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="146" useTextEdit="1" useBinaryEdit="0" left="0" path="C:/Users/ddkhang/OneDrive/Code/SDK Mesh 3.2/nRF5_SDK_15.3.0_59ac345/components/boards/pca10040.h" selected="0" top="129" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="352" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../nRF5_SDK_15.3.0_59ac345/components/libraries/twi_mngr/nrf_twi_mngr.c" selected="0" top="336" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="555" useTextEdit="1" useBinaryEdit="0" left="0" path="C:/Users/ddkhang/OneDrive/Code/SDK Mesh 3.2/nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_twi.h" selected="0" top="538" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="light_switch_server_nrf52832_xxAA_s132_6.1.1" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="light_switch_server_nrf52832_xxAA_s132_6.1.1" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Thesis/Code/SDK Mesh 3.2/nRF5_SDK_15.3.0_59ac345/components/boards" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

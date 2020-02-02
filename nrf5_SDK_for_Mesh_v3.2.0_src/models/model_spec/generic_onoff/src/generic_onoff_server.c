@@ -57,8 +57,8 @@ static uint32_t status_send(generic_onoff_server_t * p_server,
 {
     generic_onoff_status_msg_pkt_t msg_pkt;
 
-    if (p_params->present_on_off > GENERIC_ONOFF_MAX ||
-        p_params->target_on_off  > GENERIC_ONOFF_MAX ||
+    if (//p_params->present_on_off > GENERIC_ONOFF_MAX ||
+        //p_params->target_on_off  > GENERIC_ONOFF_MAX ||
         p_params->remaining_time_ms > TRANSITION_TIME_STEP_10M_MAX)
     {
         return NRF_ERROR_INVALID_PARAM;

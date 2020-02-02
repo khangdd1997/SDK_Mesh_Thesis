@@ -97,7 +97,7 @@ void uart_receive_timeout_handler()
         __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "%s\n", server_string);
         server_str_count = 0;
         server_flag = 0;
-        if (LED_index > 0)
+        if (LED_index >= 0)
         {
             generic_onoff_set_params_t set_params;
             model_transition_t transition_params;

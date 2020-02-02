@@ -72,6 +72,18 @@
 #include "app_onoff.h"
 #include "ble_softdevice_support.h"
 
+#define TRACKING_NODE 0
+#define TEMP_SENSOR_NODE 1
+
+#if (1 == TRACKING_NODE)
+//#include "application_beacon.h"
+#endif
+
+#if (1 == TEMP_SENSOR_NODE)
+#include "lm75_app.h"
+#include "nrf_delay.h"
+#endif
+
 #define ONOFF_SERVER_0_LED          (BSP_LED_0)
 #define APP_ONOFF_ELEMENT_INDEX     (0)
 
@@ -82,6 +94,7 @@ static bool m_device_provisioned;
 
 APP_TIMER_DEF(DeviceStatusSendingTimer);
 
+
 /***************************************************************
 *********** Function Prototype *********************************
 ***************************************************************/
@@ -91,6 +104,7 @@ void DeviceStatusSendingTimer_Handler();
 /***************************************************************
 *********** Function Definition ********************************
 ***************************************************************/
+
 /*************************************************************************************************/
 static void app_onoff_server_set_cb(const app_onoff_server_t * p_server, uint8_t onoff);
 static void app_onoff_server_get_cb(const app_onoff_server_t * p_server, uint8_t * p_present_onoff);
@@ -304,12 +318,12 @@ int main(void)
     if (m_device_provisioned) {
         ERROR_CHECK(app_timer_init());
         APP_ERROR_CHECK(app_timer_create(&DeviceStatusSendingTimer, APP_TIMER_MODE_REPEATED, DeviceStatusSendingTimer_Handler));
-        APP_ERROR_CHECK(app_timer_start(DeviceStatusSendingTimer, APP_TIMER_TICKS(8000), NULL)); 
+        APP_ERROR_CHECK(app_timer_start(DeviceStatusSendingTimer, APP_TIMER_TICKS(5000), NULL)); 
     }
     nrf_gpio_pin_write(BSP_LED_0, 0);
-    nrf_gpio_pin_write(BSP_LED_1, 0);
-    nrf_gpio_pin_write(BSP_LED_2, 0);
-    nrf_gpio_pin_write(BSP_LED_3, 0);
+#if (1 == TEMP_SENSOR_NODE)
+    temp_sensor_init();
+#endif
     for (;;)
     {
         (void)sd_app_evt_wait();
@@ -321,6 +335,19 @@ int main(void)
 ********************************************************************/
 void DeviceStatusSendingTimer_Handler() 
 {
-    hal_led_pin_set(BSP_LED_3, !hal_led_pin_get(BSP_LED_3));
+    nrf_gpio_pin_write(BSP_LED_1, 1);
+    nrf_gpio_pin_write(BSP_LED_2, 1);
+    nrf_gpio_pin_write(BSP_LED_3, 1);
+#if (0 == TEMP_SENSOR_NODE) 
     app_onoff_status_publish(&m_onoff_server_0);
+#else
+    (void) app_timer_stop(*m_onoff_server_0.p_timer_id);
+
+    generic_onoff_status_params_t status = {
+                .present_on_off = get_sensor_temp(),
+                .target_on_off = 0,
+                .remaining_time_ms = 0
+            };
+    (void) generic_onoff_server_status_publish(&(m_onoff_server_0.server), &status);
+#endif
 }
