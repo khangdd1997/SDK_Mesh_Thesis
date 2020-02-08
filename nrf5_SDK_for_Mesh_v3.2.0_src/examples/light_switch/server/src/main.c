@@ -73,7 +73,8 @@
 #include "ble_softdevice_support.h"
 
 #define TRACKING_NODE 0
-#define TEMP_SENSOR_NODE 1
+#define TEMP_SENSOR_NODE 0
+#define RELAY_NODE 0
 
 #if (1 == TRACKING_NODE)
 //#include "application_beacon.h"
@@ -335,6 +336,7 @@ int main(void)
 ********************************************************************/
 void DeviceStatusSendingTimer_Handler() 
 {
+    nrf_gpio_pin_write(BSP_LED_0, 1);
     nrf_gpio_pin_write(BSP_LED_1, 1);
     nrf_gpio_pin_write(BSP_LED_2, 1);
     nrf_gpio_pin_write(BSP_LED_3, 1);

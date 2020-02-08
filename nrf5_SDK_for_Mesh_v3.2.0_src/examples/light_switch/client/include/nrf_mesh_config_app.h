@@ -178,7 +178,7 @@
  * @{
  */
 /** GAP device name. */
-#define GAP_DEVICE_NAME                 "nRF5x Mesh Switch"
+#define GAP_DEVICE_NAME                 "GATEWAY"
 /** @} end of BLE_SOFTDEVICE_SUPPORT_CONFIG */
 
 /** @} end of NRF_MESH_CONFIG_CORE */

@@ -201,7 +201,6 @@ static void app_generic_onoff_client_status_cb(const generic_onoff_client_t * p_
     //        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Received: %d\n", p_in->present_on_off);
     handlerBuffer[p_self->model_handle].modelID = p_self->model_handle;
     handlerBuffer[p_self->model_handle].value = (uint8_t) p_in->target_on_off;
-    //nrf_delay_ms(300);
 }
 
 static void node_reset(void)
@@ -414,8 +413,11 @@ int main(void)
                 if (handlerBuffer[i].modelID == 2) {
                     sprintf(str, "@S%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
                 }
-                else {
+                else if (handlerBuffer[i].modelID > 2 && handlerBuffer[i].modelID <= 5) {
                     sprintf(str, "@L%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
+                }
+                else {
+                    sprintf(str, "@N%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
                 }
                 uart_send(str,75);
                 handlerBuffer[i].modelID = -1;                  

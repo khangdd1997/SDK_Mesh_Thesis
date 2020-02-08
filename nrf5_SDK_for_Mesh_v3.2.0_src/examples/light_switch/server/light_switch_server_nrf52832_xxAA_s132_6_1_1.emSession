@@ -41,12 +41,11 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="84" y="350" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="332" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="48" y="343" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="326" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="8" useTextEdit="1" useBinaryEdit="0" left="0" path="lm75/lm75_app.c" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="10" useTextEdit="1" useBinaryEdit="0" left="0" path="lm75/lm75_app.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="146" useTextEdit="1" useBinaryEdit="0" left="0" path="C:/Users/ddkhang/OneDrive/Code/SDK Mesh 3.2/nRF5_SDK_15.3.0_59ac345/components/boards/pca10040.h" selected="0" top="129" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="352" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../nRF5_SDK_15.3.0_59ac345/components/libraries/twi_mngr/nrf_twi_mngr.c" selected="0" top="336" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="555" useTextEdit="1" useBinaryEdit="0" left="0" path="C:/Users/ddkhang/OneDrive/Code/SDK Mesh 3.2/nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_twi.h" selected="0" top="538" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="180" useTextEdit="1" useBinaryEdit="0" left="0" path="../../common/src/ble_softdevice_support.c" selected="0" top="169" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="174" useTextEdit="1" useBinaryEdit="0" left="0" path="include/nrf_mesh_config_app.h" selected="0" top="153" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="light_switch_server_nrf52832_xxAA_s132_6.1.1" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Thesis/Code/SDK Mesh 3.2/nRF5_SDK_15.3.0_59ac345/components/boards" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
