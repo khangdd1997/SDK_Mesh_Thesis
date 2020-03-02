@@ -198,7 +198,7 @@ static void app_generic_onoff_client_status_cb(const generic_onoff_client_t * p_
         __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "OnOff server: 0x%04x, Present OnOff: %d\n",
               p_meta->src.value, p_in->present_on_off);
     }*/
-    //        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Received: %d\n", p_in->present_on_off);
+            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Received: %d\n", p_in->present_on_off);
     handlerBuffer[p_self->model_handle].modelID = p_self->model_handle;
     handlerBuffer[p_self->model_handle].value = (uint8_t) p_in->target_on_off;
 }
@@ -410,10 +410,10 @@ int main(void)
         for (uint32_t i = 0; i < COLLECTOR_BUFFER_SIZE; i++) {
             if (handlerBuffer[i].modelID != -1) {
                 char str[7];
-                if (handlerBuffer[i].modelID == 2) {
+                if (handlerBuffer[i].modelID == 2 && handlerBuffer[i].modelID == 3) {
                     sprintf(str, "@S%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
                 }
-                else if (handlerBuffer[i].modelID > 2 && handlerBuffer[i].modelID <= 5) {
+                else if (handlerBuffer[i].modelID >= 4 && handlerBuffer[i].modelID <= 4) {
                     sprintf(str, "@L%d,%d\n", handlerBuffer[i].modelID - 2, handlerBuffer[i].value);
                 }
                 else {

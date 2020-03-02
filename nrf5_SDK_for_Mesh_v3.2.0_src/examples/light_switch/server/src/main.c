@@ -74,6 +74,7 @@
 
 #define TRACKING_NODE 0
 #define TEMP_SENSOR_NODE 0
+#define FLAME_SENSOR_NODE 1
 #define RELAY_NODE 0
 
 #if (1 == TRACKING_NODE)
@@ -94,6 +95,10 @@
 static bool m_device_provisioned;
 
 APP_TIMER_DEF(DeviceStatusSendingTimer);
+#if (1 == FLAME_SENSOR_NODE)
+APP_TIMER_DEF(FlameReadInterval);
+APP_TIMER_DEF(FlameStatusSend);
+#endif
 
 
 /***************************************************************
@@ -124,7 +129,8 @@ static void app_onoff_server_set_cb(const app_onoff_server_t * p_server, uint8_t
 
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Setting GPIO value: %d\n", onoff)
 
-    hal_led_pin_set(ONOFF_SERVER_0_LED, onoff);
+    //hal_led_pin_set(ONOFF_SERVER_0_LED, onoff);
+    nrf_gpio_pin_write(26, !onoff);
 }
 
 /* Callback for reading the hardware state */
@@ -132,7 +138,7 @@ static void app_onoff_server_get_cb(const app_onoff_server_t * p_server, uint8_t
 {
     /* Resolve the server instance here if required, this example uses only 1 instance. */
 
-    *p_present_onoff = hal_led_pin_get(ONOFF_SERVER_0_LED);
+    *p_present_onoff = hal_led_pin_get(26);
 }
 
 static void app_model_init(void)
@@ -311,6 +317,33 @@ static void start(void)
     hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_START);
 }
 
+#if (1 == FLAME_SENSOR_NODE)
+static void FlameStatus_Send() 
+{
+    (void) app_timer_stop(*m_onoff_server_0.p_timer_id);
+
+    generic_onoff_status_params_t status = {
+                .present_on_off = 1,
+                .target_on_off = 0,
+                .remaining_time_ms = 0
+            };
+    (void) generic_onoff_server_status_publish(&(m_onoff_server_0.server), &status);
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Flame detect");
+}
+
+static void flameRead_Handler() {
+    uint8_t status = nrf_gpio_pin_read(26);
+    if (status == 0) {
+        APP_ERROR_CHECK(app_timer_create(&FlameStatusSend, APP_TIMER_MODE_REPEATED, FlameStatus_Send));
+        APP_ERROR_CHECK(app_timer_start(FlameStatusSend, APP_TIMER_TICKS(3000), NULL));
+    }
+    else {
+        APP_ERROR_CHECK(app_timer_stop(FlameStatusSend));
+    }
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Pin 26: %d", status);
+}
+#endif
+
 int main(void)
 {
     initialize();
@@ -319,12 +352,17 @@ int main(void)
     if (m_device_provisioned) {
         ERROR_CHECK(app_timer_init());
         APP_ERROR_CHECK(app_timer_create(&DeviceStatusSendingTimer, APP_TIMER_MODE_REPEATED, DeviceStatusSendingTimer_Handler));
-        APP_ERROR_CHECK(app_timer_start(DeviceStatusSendingTimer, APP_TIMER_TICKS(5000), NULL)); 
+        APP_ERROR_CHECK(app_timer_start(DeviceStatusSendingTimer, APP_TIMER_TICKS(5000), NULL));
+#if (1 == FLAME_SENSOR_NODE)
+        APP_ERROR_CHECK(app_timer_create(&FlameReadInterval, APP_TIMER_MODE_REPEATED, flameRead_Handler));
+        APP_ERROR_CHECK(app_timer_start(FlameReadInterval, APP_TIMER_TICKS(300), NULL));
+#endif
     }
-    nrf_gpio_pin_write(BSP_LED_0, 0);
+    
 #if (1 == TEMP_SENSOR_NODE)
     temp_sensor_init();
 #endif
+
     for (;;)
     {
         (void)sd_app_evt_wait();
@@ -340,9 +378,18 @@ void DeviceStatusSendingTimer_Handler()
     nrf_gpio_pin_write(BSP_LED_1, 1);
     nrf_gpio_pin_write(BSP_LED_2, 1);
     nrf_gpio_pin_write(BSP_LED_3, 1);
-#if (0 == TEMP_SENSOR_NODE) 
-    app_onoff_status_publish(&m_onoff_server_0);
+    
+#if (1 == FLAME_SENSOR_NODE)
+    (void) app_timer_stop(*m_onoff_server_0.p_timer_id);
+
+    generic_onoff_status_params_t status = {
+                .present_on_off = status = nrf_gpio_pin_read(26);,
+                .target_on_off = 0,
+                .remaining_time_ms = 0
+            };
+    (void) generic_onoff_server_status_publish(&(m_onoff_server_0.server), &status);
 #else
+#if (1 == TEMP_SENSOR_NODE)
     (void) app_timer_stop(*m_onoff_server_0.p_timer_id);
 
     generic_onoff_status_params_t status = {
@@ -351,5 +398,8 @@ void DeviceStatusSendingTimer_Handler()
                 .remaining_time_ms = 0
             };
     (void) generic_onoff_server_status_publish(&(m_onoff_server_0.server), &status);
+#else
+    app_onoff_status_publish(&m_onoff_server_0);
+#endif
 #endif
 }

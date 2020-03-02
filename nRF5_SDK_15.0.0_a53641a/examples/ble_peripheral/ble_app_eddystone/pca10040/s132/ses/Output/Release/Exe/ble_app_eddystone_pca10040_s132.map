@@ -1,0 +1,12 @@
+Archive member included to satisfy reference by file (symbol)
+
+D:/Embedded Segger 4.12/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc_asm.o)
+                              Output/ble_app_eddystone_pca10040_s132 Release/Obj/bsp.o (__aeabi_uldivmod)
+D:/Embedded Segger 4.12/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                              Output/ble_app_eddystone_pca10040_s132 Release/Obj/platform.o (calloc)
+D:/Embedded Segger 4.12/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                              Output/ble_app_eddystone_pca10040_s132 Release/Obj/app_scheduler.o (memcpy)
+D:/Embedded Segger 4.12/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc.o)
+                              D:/Embedded Segger 4.12/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o) (__heap_lock)
+D:/Embedded Segger 4.12/lib/libdebugio_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libdebugio.o)
+                              Output/ble_app_eddystone_pca10040_s132 Release/Obj/thumb_crt0.o (debug_fopen)

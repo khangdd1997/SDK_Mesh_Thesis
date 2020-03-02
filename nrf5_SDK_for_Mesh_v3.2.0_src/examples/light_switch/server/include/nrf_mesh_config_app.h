@@ -168,7 +168,7 @@
  *
  * @{
  */
-#define GAP_DEVICE_NAME                 "RELAY NODE 1"
+#define GAP_DEVICE_NAME                 "TEMP SENSOR"
 /** @} end of BLE_SOFTDEVICE_SUPPORT_CONFIG */
 
 /** @} end of NRF_MESH_CONFIG_CORE */

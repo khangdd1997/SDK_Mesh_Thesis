@@ -1,0 +1,70 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;Access"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;Application"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;Bearer"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;Configuration Model"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;Core"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;GATT"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;nRF5 SDK"/>
+  <ProjectSessionItem path="beaconing_nrf52832_xxAA_s132_6.0.0;beaconing_nrf52832_xxAA_s132_6.0.0;Other"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../doc/getting_started/SES.md" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="74" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="69" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="78" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/bearer/api/advertiser.h" selected="0" top="59" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="358" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/bearer/src/advertiser.c" selected="0" top="346" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_15.0.0_a53641a/components/ble/common/ble_conn_params.h" selected="0" top="50" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="40" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_15.0.0_a53641a/components/ble/common/ble_conn_params.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="49" useTextEdit="1" useBinaryEdit="0" left="0" path="../../external/sdk_fix/nrf_sdh.c" selected="0" top="16" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="8" useTextEdit="1" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="58" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_15.0.0_a53641a/components/libraries/util/sdk_common.h" selected="0" top="40" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="79" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_15.0.0_a53641a/components/libraries/util/nordic_common.h" selected="0" top="63" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="206" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_15.0.0_a53641a/components/libraries/util/app_util.h" selected="0" top="174" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="691" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/gatt/src/proxy.c" selected="0" top="661" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="63" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/gatt/include/mesh_gatt.h" selected="0" top="36" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="774" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/access/src/device_state_manager.c" selected="0" top="758" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="271" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/core/api/nrf_mesh.h" selected="0" top="256" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="52" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/access/src/access_reliable.c" selected="0" top="30" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="40" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/core/api/nrf_mesh_config_core.h" selected="0" top="20" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="48" useTextEdit="1" useBinaryEdit="0" left="0" path="../common/src/simple_hal.c" selected="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="50" useTextEdit="1" useBinaryEdit="0" left="0" path="../../mesh/core/api/nrf_mesh_defines.h" selected="0" top="35" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="113" useTextEdit="1" useBinaryEdit="0" left="0" path="../common/src/mesh_softdevice_init.c" selected="0" top="97" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="beaconing_nrf52832_xxAA_s132_6.0.0" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/ddkhang/OneDrive/Code/SDK/SDKforMesh2.2.0/mesh/gatt/src" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>

@@ -1,0 +1,54 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0"/>
+  <ProjectSessionItem path="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0"/>
+  <ProjectSessionItem path="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;Access"/>
+  <ProjectSessionItem path="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;Application"/>
+  <ProjectSessionItem path="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;Configuration Model"/>
+  <ProjectSessionItem path="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0;Other"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="77" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="0" top="108" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="103" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_level/src/generic_level_server.c" selected="1" top="235" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="51" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_level/include/generic_level_server.h" selected="0" top="51" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="65" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_level/include/generic_level_common.h" selected="0" top="55" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="70" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../models/model_spec/generic_level/include/generic_level_messages.h" selected="0" top="36" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="51" useTextEdit="1" useBinaryEdit="0" left="0" path="include/app_config.h" selected="0" top="34" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="light_switch_dimming_server_nrf52832_xxAA_s132_6.0.0" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/ddkhang/Downloads/nrf5SDKforMeshv310src/models/vendor/simple_on_off/include" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
